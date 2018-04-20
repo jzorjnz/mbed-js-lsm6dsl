@@ -32,34 +32,34 @@ npm install syed-zeeshan/mbed-js-lsm6dsl
  * Instantiation *
  *****************/
 // Instantiate LSM6DSL library 
-var lsm6dl = LSM6DSL_JS();
+var lsm6dsl = LSM6DSL_JS();
 
 /******************
  * Initialization *
  ******************/
 // Initialize using DevI2C
-lsm6dl.init_i2c(dev_i2c);
+lsm6dsl.init_i2c(dev_i2c);
 
 // Initialize using DevI2C, int1 pin and int2 pin
-lsm6dl.init_i2c(dev_i2c, int1_pin, int2_pin);
+lsm6dsl.init_i2c(dev_i2c, int1_pin, int2_pin);
 
 // Initialize using DevI2C, int1 pin, int2 pin and address
-lsm6dl.init_i2c(dev_i2c, int1_pin, int2_pin, address);
+lsm6dsl.init_i2c(dev_i2c, int1_pin, int2_pin, address);
 
 // Initialize using SPI and CS pin
-lsm6dl.init_spi(spi, cs_pin);
+lsm6dsl.init_spi(spi, cs_pin);
 
 // Initialize using SPI, CS pin, int1 pin, int2 pin and SPI type
-lsm6dl.init_spi(spi, cs_pin, int1_pin, int2_pin, spi_type);
+lsm6dsl.init_spi(spi, cs_pin, int1_pin, int2_pin, spi_type);
 
 /***********************
  * Reading sensor data *
  ***********************/
 // To read accelerometer data (JSON output)
-lsm6dl.get_accelerometer_axes();
+lsm6dsl.get_accelerometer_axes();
 
 // To read gyroscope data (JSON output)
-lsm6dl.get_gyroscope_axes();
+lsm6dsl.get_gyroscope_axes();
 
 ```
 
@@ -69,14 +69,14 @@ lsm6dl.get_gyroscope_axes();
 var dev_i2c = DevI2C(D14, D15);
 
 // Instantiate LSM6DSL library 
-var lsm6dl = LSM6DSL_JS();
+var lsm6dsl = LSM6DSL_JS();
 
 // Initialize LSM6DSL library
-lsm6dl.init_i2c(dev_i2c);
+lsm6dsl.init_i2c(dev_i2c);
 
 // Print sensor data
-var acc = lsm6dl.get_accelerometer_axes();
-var gyr = lsm6dl.get_gyroscope_axes();
+var acc = lsm6dsl.get_accelerometer_axes();
+var gyr = lsm6dsl.get_gyroscope_axes();
 
 print("[Accelerometer]: [" + acc.x + ", " + acc.y + ", " + acc.z + "]");
 print("[Gyroscope]: [" + gyr.x + ", " + gyr.y + ", " + gyr.z + "]");
@@ -88,14 +88,14 @@ print("[Gyroscope]: [" + gyr.x + ", " + gyr.y + ", " + gyr.z + "]");
 var spi = SPI(PB_15, NC, PB_13);
 
 // Instantiate LSM6DSL library 
-var lsm6dl = LSM6DSL_JS();
+var lsm6dsl = LSM6DSL_JS();
 
 // Initialize using SPI and CS pin
-lsm6dl.init_spi(spi, PB_12, NC, PA_2, 3);
+lsm6dsl.init_spi(spi, PB_12, NC, PA_2, 3);
 
 // Print sensor data
-var acc = lsm6dl.get_accelerometer_axes();
-var gyr = lsm6dl.get_gyroscope_axes();
+var acc = lsm6dsl.get_accelerometer_axes();
+var gyr = lsm6dsl.get_gyroscope_axes();
 
 print("[Accelerometer]: [" + acc.x + ", " + acc.y + ", " + acc.z + "]");
 print("[Gyroscope]: [" + gyr.x + ", " + gyr.y + ", " + gyr.z + "]");
